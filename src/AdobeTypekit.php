@@ -88,6 +88,8 @@ class AdobeTypekit
             );
         }
 
+        $localizedCss = preg_replace('/\@import url\("https:\/\/p.typekit.net\/p.css[^)]+"\);/', '', $localizedCss);
+
         $this->filesystem->put($this->path($url, 'fonts.css'), $localizedCss);
 
         return new Fonts(
@@ -108,10 +110,7 @@ class AdobeTypekit
 
     protected function localizeFontUrl(string $path): string
     {
-        $extension = Str(Http::head($path)->header('Content-Type'))->replace("application/font-")->toString();
-        dd($extension);
-        dd(str_replace('https://use.typekit.net/', '', $path));
-        dd($path, $extension);
+        $extension = (string) \Illuminate\Support\Str::of(Http::head($path)->header('Content-Type'))->replace("application/font-", "");
         return implode('.', [Str::slug($path), $extension]);
     }
 
