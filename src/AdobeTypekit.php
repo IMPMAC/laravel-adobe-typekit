@@ -101,15 +101,17 @@ class AdobeTypekit
     protected function extractFontUrls(string $css): array
     {
         $matches = [];
-        preg_match_all('/url\((https:\/\/fonts.gstatic.com\/[^)]+)\)/', $css, $matches);
+        preg_match_all('/url\("(https:\/\/use.typekit.net\/[^)]+)"\)/', $css, $matches);
 
         return $matches[1] ?? [];
     }
 
     protected function localizeFontUrl(string $path): string
     {
-        [$path, $extension] = explode('.', str_replace('https://fonts.gstatic.com/', '', $path));
-
+        $extension = Str(Http::head($path)->header('Content-Type'))->replace("application/font-")->toString();
+        dd($extension);
+        dd(str_replace('https://use.typekit.net/', '', $path));
+        dd($path, $extension);
         return implode('.', [Str::slug($path), $extension]);
     }
 
