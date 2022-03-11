@@ -50,7 +50,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Weble\\AdobeTypekit\\AdoneTypekitServiceProvider"
+                "Weble\\AdobeTypekit\\AdobeTypekitServiceProvider"
             ],
             "aliases": {
                 "AdobeTypekit": "Weble\\AdobeTypekit\\AdoneTypekitFacade"
