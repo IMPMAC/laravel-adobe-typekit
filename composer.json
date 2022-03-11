@@ -1,0 +1,62 @@
+{
+    "name": "weble/laravel-adobe-typekit",
+    "description": "Manage self-hosted Adobe Typekit Fonts in Laravel apps",
+    "keywords": [
+        "spatie",
+        "laravel",
+        "laravel-adobe-typekit",
+        "Adobe Typekit"
+    ],
+    "homepage": "https://github.com/weble/laravel-adobe-typekit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniele Rosario",
+            "email": "daniele@weble.it",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/contracts": "^8.37|^9.0",
+        "spatie/laravel-package-tools": "^1.7.0"
+    },
+    "require-dev": {
+        "brianium/paratest": "^6.3",
+        "nunomaduro/collision": "^5.4|^6.0",
+        "orchestra/testbench": "^6.17|^7.0",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ray": "^1.17",
+        "spatie/phpunit-snapshot-assertions": "^4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weble\\AdobeTypekit\\": "src",
+            "Weble\\AdobeTypekit\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Weble\\AdobeTypekit\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Weble\\AdobeTypekit\\AdoneTypekitServiceProvider"
+            ],
+            "aliases": {
+                "AdobeTypekit": "Weble\\AdobeTypekit\\AdoneTypekitFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
