@@ -89,6 +89,7 @@ class AdobeTypekit
         }
 
         $localizedCss = preg_replace('/\@import url\("https:\/\/p.typekit.net\/p.css[^)]+"\);/', '', $localizedCss);
+        $localizedCss = str_replace("font-display:auto;", "font-display:swap;", $localizedCss);
 
         $this->filesystem->put($this->path($url, 'fonts.css'), $localizedCss);
 
