@@ -20,7 +20,7 @@
         "php": "^8.0",
         "illuminate/contracts": "^8.37|^9.0|^10.0",
         "illuminate/support": "^8.37|^9.0|^10.0",
-        "spatie/laravel-package-tools": "^1.7.0"
+        "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
         "brianium/paratest": "^6.3",
@@ -58,6 +58,6 @@
             }
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
