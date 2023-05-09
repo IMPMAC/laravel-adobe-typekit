@@ -1,5 +1,5 @@
 {
-    "name": "weble/laravel-adobe-typekit",
+    "name": "impmac/laravel-adobe-typekit",
     "description": "Manage self-hosted Adobe Typekit Fonts in Laravel apps",
     "keywords": [
         "spatie",
